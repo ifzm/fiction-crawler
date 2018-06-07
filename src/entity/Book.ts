@@ -1,6 +1,4 @@
 /*
- * Filename: /Users/jim/Documents/vscode-workspace/typeorm-mongo/src/entity/Book.ts
- * Path: /Users/jim/Documents/vscode-workspace/typeorm-mongo
  * Created Date: Thursday, June 7th 2018, 8:46:08 pm
  * Author: jim
  * 

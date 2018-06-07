@@ -1,3 +1,10 @@
+/*
+ * Created Date: Monday, June 4th 2018, 11:23:15 pm
+ * Author: jim
+ * 
+ * Copyright (c) 2018 Your Company
+ */
+
 global.Promise = require('bluebird')
 
 import "reflect-metadata"

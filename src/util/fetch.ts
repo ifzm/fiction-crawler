@@ -1,6 +1,4 @@
 /*
- * Filename: /Users/jim/Documents/vscode-workspace/typeorm-mongo/src/util/fetch.ts
- * Path: /Users/jim/Documents/vscode-workspace/typeorm-mongo
  * Created Date: Wednesday, June 6th 2018, 11:25:34 pm
  * Author: jim
  * 
