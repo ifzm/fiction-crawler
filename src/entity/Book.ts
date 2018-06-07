@@ -21,10 +21,6 @@ export abstract class Content {
     @Column()
     name: String
 
-    // 更新时间
-    @Column()
-    updateTime: Date
-
 }
 
 @Entity()
@@ -35,7 +31,7 @@ export class Chapter extends Content {
 @Entity()
 export class Book extends Content {
 
-    // 分类
+    // 分类[玄幻小说、仙侠小说、都市小说、历史小说、网游小说、科幻小说、言情小说、全本小说、排行榜]
     @Column()
     type: Number
 
@@ -55,6 +51,10 @@ export class Book extends Content {
     @Column()
     status: String
 
+    // 封面图
+    @Column()
+    coverPicture: String
+
     // 最新章节
     @Column()
     latestChapters: Chapter
@@ -63,4 +63,11 @@ export class Book extends Content {
     @Column()
     chapters: Chapter[]
 
+    // 更新时间
+    @Column()
+    updateTime: Date
+
+    // 入库时间
+    @Column()
+    createTime: Date
 }

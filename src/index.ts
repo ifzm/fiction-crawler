@@ -39,7 +39,6 @@ createConnection().then(async connection => {
                 const latestChapters = new Chapter()
                 latestChapters.name = $('.stats .l a').text()
                 latestChapters.uri = $('.stats .l a').attr('href')
-                latestChapters.updateTime = new Date($('.stats .r i').eq(2).text().replace('-', '/'))
 
                 const chapters: Chapter[] = $('.chapter-list dd')
                     .get()
@@ -50,9 +49,13 @@ createConnection().then(async connection => {
                         return chapter
                     })
 
+                const urisplit = uri.split('\/')
+                const coverPictureName = urisplit[urisplit.length - 2] + 's.jpg'
+                book.coverPicture = uri.replace('book', 'files/article/image') + coverPictureName
                 book.chapters = chapters
                 book.latestChapters = latestChapters
-                book.updateTime = new Date()
+                book.updateTime = new Date($('.stats .r i').eq(2).text().replace('-', '/'))
+                book.createTime = new Date()
 
                 books.push(book)
                 spinner.text = spinner.text.replace(/\d+/, `${books.length}`)
