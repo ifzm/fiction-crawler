@@ -36,7 +36,7 @@ createConnection().then(async connection => {
                 book.words = Number($('.stats .r i').eq(1).text())
                 book.status = $('.stats .r i').eq(0).text()
 
-                const chapters: Chapter[] = $('.chapter-list dd').get()
+                const chapters = $('.chapter-list dd').get()
                     .map(el => new Chapter($(el).find('a').attr('href'), $(el).find('a').text()))
 
                 const urisplit = uri.split('\/')
@@ -50,7 +50,7 @@ createConnection().then(async connection => {
                 books.push(book)
                 spinner.text = spinner.text.replace(/\d+/, `${books.length}`)
             } catch (error) {
-                console.log(uri, error.message)
+                console.log('\n', uri, error.message)
             }
         }
 

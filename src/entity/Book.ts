@@ -5,7 +5,7 @@
  * Copyright (c) 2018 Your Company
  */
 
-import { Entity, ObjectIdColumn, ObjectID, Column, Index, UpdateDateColumn } from "typeorm"
+import { Entity, ObjectIdColumn, ObjectID, Column, Index } from "typeorm"
 
 export abstract class Content {
 
@@ -76,4 +76,5 @@ export class Book extends Content {
     // 入库时间
     @Column()
     createTime: Date
+
 }
