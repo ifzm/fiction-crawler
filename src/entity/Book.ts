@@ -26,6 +26,12 @@ export abstract class Content {
 @Entity()
 export class Chapter extends Content {
 
+    constructor(uri: string, name: string) {
+        super()
+        this.uri = uri
+        this.name = name
+    }
+
 }
 
 @Entity()

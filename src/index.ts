@@ -36,24 +36,14 @@ createConnection().then(async connection => {
                 book.words = Number($('.stats .r i').eq(1).text())
                 book.status = $('.stats .r i').eq(0).text()
 
-                const latestChapters = new Chapter()
-                latestChapters.name = $('.stats .l a').text()
-                latestChapters.uri = $('.stats .l a').attr('href')
-
-                const chapters: Chapter[] = $('.chapter-list dd')
-                    .get()
-                    .map(el => {
-                        const chapter = new Chapter()
-                        chapter.name = $(el).find('a').text()
-                        chapter.uri = $(el).find('a').attr('href')
-                        return chapter
-                    })
+                const chapters: Chapter[] = $('.chapter-list dd').get()
+                    .map(el => new Chapter($(el).find('a').attr('href'), $(el).find('a').text()))
 
                 const urisplit = uri.split('\/')
                 const coverPictureName = urisplit[urisplit.length - 2] + 's.jpg'
                 book.coverPicture = uri.replace('book', 'files/article/image') + coverPictureName
                 book.chapters = chapters
-                book.latestChapters = latestChapters
+                book.latestChapters = new Chapter($('.stats .l a').attr('href'), $('.stats .l a').text())
                 book.updateTime = new Date($('.stats .r i').eq(2).text().replace('-', '/'))
                 book.createTime = new Date()
 
