@@ -16,8 +16,8 @@ import { Book, Chapter, Link } from './entity/Book'
 const spinner = ora(` 收录『 UC书盟小说 』共 0 本`).start()
 createConnection().then(async connection => {
     try {
-        const linkRepository = getMongoRepository(Link)
         const bookRepository = getMongoRepository(Book)
+        const linkRepository = getMongoRepository(Link)
         const links = await linkRepository.find().then(vs => vs.map(v => v.uri))
 
         const HOST = 'http://www.uctxt.com'
@@ -57,7 +57,7 @@ createConnection().then(async connection => {
                 spinner.text = spinner.text.replace(/\d+/, `${books.length}`)
 
                 // 将采集的地址入库
-                linkRepository.save(new Link(uri, book.name))
+                await linkRepository.save(new Link(uri, book.name))
             } catch (error) {
                 console.log('\n', uri, error.message)
             }
