@@ -26,7 +26,7 @@ export abstract class Content {
 @Entity()
 export class Chapter extends Content {
 
-    constructor(uri: string, name: string) {
+    constructor(uri: String, name: String) {
         super()
         this.uri = uri
         this.name = name
@@ -39,7 +39,7 @@ export class Book extends Content {
 
     // 分类[玄幻小说、仙侠小说、都市小说、历史小说、网游小说、科幻小说、言情小说、全本小说、排行榜]
     @Column()
-    type: Number
+    type: String
 
     // 作者
     @Column()
@@ -63,7 +63,7 @@ export class Book extends Content {
 
     // 最新章节
     @Column()
-    latestChapters: Chapter
+    latestChapter: Chapter
 
     // 所有章节
     @Column()
@@ -76,5 +76,16 @@ export class Book extends Content {
     // 入库时间
     @Column()
     createTime: Date
+
+}
+
+@Entity()
+export class Link extends Content {
+
+    constructor(uri: String, name: String) {
+        super()
+        this.uri = uri
+        this.name = name
+    }
 
 }
