@@ -7,7 +7,7 @@
 
 ## Usage
 
-```basic
+```shell
 # install via yarn
 
 yarn install
