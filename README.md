@@ -4,9 +4,20 @@
 
 说明：仅供学习使用，如有侵权通知我立刻删除  
 
+
+## Usage
+
+```basic
+-- install via yarn
+
+yarn install
+yarn run start
+```
+
+
 <br/>
 原来写的版本太烂, 也丢了很久了, 这次用 TypeScript + typeorm + mongodb 尝试一波，借机学习 ts
-<br/>
+
 预计分为四个子模块：
 
 - [x] 新书入库 ( 包含初始化 )
