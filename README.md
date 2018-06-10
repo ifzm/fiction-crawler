@@ -18,7 +18,7 @@ yarn run test
 
 
 <br/>
-原来写的版本太烂, 也丢了很久了, 这次用 TypeScript + typeorm + mongodb 尝试一波，借机学习 ts
+原来写的版本太烂, 也丢了很久了, 这次用 TypeScript + typeorm + mongodb 尝试一波，借机学习 ts 😊
 
 预计分为四个子模块：
 
