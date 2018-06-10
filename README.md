@@ -30,5 +30,6 @@ yarn run test
 <br/>
 TODO
 
+- [ ] 写好 README
 - [ ] 性能优化
 - [ ] 代理 IP 池
