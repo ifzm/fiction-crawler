@@ -8,7 +8,7 @@
 ## Usage
 
 ```basic
--- install via yarn
+# install via yarn
 
 yarn install
 yarn run start
