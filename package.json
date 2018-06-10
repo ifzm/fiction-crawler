@@ -1,9 +1,10 @@
 {
-   "name": "typeorm-mongo",
+   "name": "uctxt-crawler",
    "version": "0.0.1",
-   "description": "Awesome project developed with TypeORM.",
+   "description": "fiction crawler for uctxt site.",
    "devDependencies": {
       "@types/cheerio": "^0.22.7",
+      "@types/fs-extra": "^5.0.3",
       "@types/lodash": "^4.14.109",
       "@types/moment": "^2.13.0",
       "@types/node": "^10.3.1",
@@ -15,6 +16,7 @@
    "dependencies": {
       "bluebird": "^3.5.1",
       "cheerio": "^1.0.0-rc.2",
+      "fs-extra": "^6.0.1",
       "iconv-lite": "^0.4.23",
       "lodash": "^4.17.10",
       "moment": "^2.22.2",

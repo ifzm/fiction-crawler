@@ -23,7 +23,6 @@ export abstract class Content {
 
 }
 
-@Entity()
 export class Chapter extends Content {
 
     constructor(uri: String, name: String) {
@@ -80,12 +79,40 @@ export class Book extends Content {
 }
 
 @Entity()
-export class Link extends Content {
+export class Directory {
 
-    constructor(uri: String, name: String) {
-        super()
+    @ObjectIdColumn()
+    id: ObjectID
+
+    // 链接
+    @Column()
+    @Index({ unique: true })
+    uri: String
+
+    // 类别
+    @Column()
+    type: String
+
+    constructor(uri: String, type: String) {
         this.uri = uri
-        this.name = name
+        this.type = type
+    }
+
+}
+
+@Entity()
+export class FailLink {
+
+    @ObjectIdColumn()
+    id: ObjectID
+
+    // 链接
+    @Column()
+    @Index({ unique: true })
+    uri: String
+
+    constructor(uri: String) {
+        this.uri = uri
     }
 
 }
