@@ -64,19 +64,21 @@ createConnection().then(async connection => {
                     book.chapters = $('.chapter-list dd').get()
                         .map(el => new Chapter($(el).find('a').attr('href'), $(el).find('a').text()))
     
-                    // 入库
+                    // 小说信息入库
                     await bookRepository.save(book)
                     spinner.text = spinner.text.replace(/(\d+)/, m => String(Number(m) + 1))
     
-                    // 将采集的地址入库
+                    // 将采集过的地址入库
                     await directoryRepository.save(new Directory(uri, book.type))
 
                     // 将页面编码设置为utf-8
                     $('meta[charset]').attr('charset', 'utf-8')
-                    // 静态化
+                    // 小说页面静态化
                     const filePath = path.resolve(__dirname, `../../static${uri}`)
                     await fs.mkdirs(filePath)
                     await fs.writeFile(`${filePath}/index.html`, $.html())
+
+                    // 小说章节页面静态化
                     Promise.resolve().then(() => {
                         book.chapters.forEach(async chapter => {
                             const link = HOST + uri + chapter.uri
