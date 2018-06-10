@@ -11,8 +11,8 @@
 
 - [x] 新书入库 ( 包含初始化 )
 - [x] 资源静态化
-- [ ] 书籍更新 ( 定时任务，可选方案 Bull、Kue、Agenda )
-- [ ] 前端展示 ( Nest + Vue )
+- [ ] 书籍更新 ( 定时任务，可选方案 [Bull](https://github.com/OptimalBits/bull)、[Kue](https://github.com/Automattic/kue)、[Agenda](https://github.com/agenda/agenda) )
+- [ ] 网页阅读 ( [Nest](https://github.com/nestjs/nest)、 [Vue](https://github.com/vuejs/vue) + [Vuetify](https://github.com/vuetifyjs/vuetify) )
 
 <br/>
 TODO
