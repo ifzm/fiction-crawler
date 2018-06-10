@@ -12,6 +12,8 @@
 
 yarn install
 yarn run start
+# or
+yarn run test
 ```
 
 
