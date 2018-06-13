@@ -8,6 +8,6 @@ fetch({
 .then(($: CheerioStatic) => {
     console.log($('title').text())
 })
-.catch(err => {
+.catch((err: Error) => {
     console.log(err.message)
 })

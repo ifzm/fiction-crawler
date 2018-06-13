@@ -2,7 +2,13 @@
 # yarn lockfile v1
 
 
-"@types/bluebird@*":
+"@types/bluebird-global@^3.5.5":
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/@types/bluebird-global/-/bluebird-global-3.5.5.tgz#b3bd9dc0a020c8ee74cebd2c460249e5629a89ef"
+  dependencies:
+    "@types/bluebird" "*"
+
+"@types/bluebird@*", "@types/bluebird@^3.5.20":
   version "3.5.20"
   resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.20.tgz#f6363172add6f4eabb8cada53ca9af2781e8d6a1"
 
