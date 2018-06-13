@@ -71,8 +71,6 @@ createConnection().then(async connection => {
                     // 将采集过的地址入库
                     await directoryRepository.save(new Directory(uri, book.type))
 
-                    // 将页面编码设置为utf-8
-                    $('meta[charset]').attr('charset', 'utf-8')
                     // 小说页面静态化
                     const filePath = path.resolve(__dirname, `../../static${uri}`)
                     await fs.mkdirs(filePath)
@@ -84,7 +82,6 @@ createConnection().then(async connection => {
                             const link = HOST + uri + chapter.uri
                             try {
                                 const $ = await fetch({ uri: link })
-                                $('meta[charset]').attr('charset', 'utf-8')
                                 await fs.writeFile(`${filePath}/${chapter.uri}`, $.html())
                             } catch (error) {
                                 // 保存失败的章节链接，用于之后补偿下载

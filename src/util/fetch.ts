@@ -18,7 +18,9 @@ function fetch(options: rp.Options): rp.RequestPromise {
             // 将页面内容转换为utf-8字符串
             let html = iconv.decode(buffer, 'gbk')
             html = iconv.encode(html, 'utf-8').toString('utf8')
-            return cheerio.load(html, { decodeEntities: false })
+            const $ = cheerio.load(html, { decodeEntities: false })
+            $('meta[charset]').attr('charset', 'utf-8')
+            return $
         }
     })
 
